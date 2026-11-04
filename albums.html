@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Albums | MyPlaylist </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/cards.css" rel="stylesheet">
+    <link href="css/endterm.css" rel="stylesheet">
+</head>
+    <body>
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo"> My<span>Playlist.</span> </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="index.html"> Home </a>
+                        </li>
+                        <li>
+                            <a href="songs.html"> Songs </a>
+                        </li>
+                        <li>
+                            <a href="albums.html" class="active"> Albums </a>
+                        </li>
+                        <li>
+                            <a href="artists.html"> Artists </a>
+                        </li>
+                        <li>
+                            <a href="about.html"> About </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="container my-5">
+            <section class="page-heading">
+                <h1>Albums</h1>
+                <p>A few albums to listen to from start to finish.</p>
+            </section>
+            <section class="card-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="album-gallery">
+                <div class="music-card col">
+                    <img src="images/tame-impala.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>Tame Impala</p>
+                        <h2>Currents</h2>
+                        <p>Let It Happen · The Less I Know The Better</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+                <div class="music-card col">
+                    <img src="images/tame-impala.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>Tame Impala</p>
+                        <h2>The Slow Rush</h2>
+                        <p>Borderline · Breathe Deeper</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+                <div class="music-card col">
+                    <img src="images/tame-impala.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>Tame Impala</p>
+                        <h2>Lonerism</h2>
+                        <p>Elephant · Feels Like We Only Go Backwards</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+                <div class="music-card col">
+                    <img src="images/ayau.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>The Weeknd</p>
+                        <h2>After Hours</h2>
+                        <p>Blinding Lights · Save Your Tears</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+                <div class="music-card col">
+                    <img src="images/kairat-nurtas.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>Dua Lipa</p>
+                        <h2>Future Nostalgia</h2>
+                        <p>Levitating · Don’t Start Now</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+                <div class="music-card col">
+                    <img src="images/the-weeknd.jpg" width="600" height="600" loading="lazy" alt="Featured music artist" onerror="this.onerror=null;this.src='images/music-placeholder.svg'">
+                    <div class="card-content">
+                        <p>Billie Eilish</p>
+                        <h2>HIT ME HARD AND SOFT</h2>
+                        <p>BIRDS OF A FEATHER · LUNCH</p>
+                        <a class="btn music-btn" href="songs.html">Listen</a>
+                    </div>
+                </div>
+            </section>
+        <p class="mt-3">Select an image to enlarge it. Use the arrow keys to browse.</p>
+<dialog id="lightbox" aria-label="Album image gallery"><div class="lightbox-content"><button id="close-lightbox" class="btn second-btn" autofocus>Close ×</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure><div class="filter-buttons"><button id="previous-image" class="btn second-btn" aria-label="Previous image">← Previous</button><button id="next-image" class="btn music-btn" aria-label="Next image">Next →</button></div></div></dialog></main>
+        <footer class="footer">
+    <div class="container">
+        <p> Contact: <a href="mailto:252080@astanait.edu.kz">252080@astanait.edu.kz</a> | <a href="mailto:254241@astanait.edu.kz">254241@astanait.edu.kz</a> | <a href="mailto:253884@astanait.edu.kz">253884@astanait.edu.kz</a> </p>
+        <div class="social-links">
+            <a href="https://github.com/yTuzelkhan" target="_blank" rel="noopener noreferrer"> GitHub </a>
+        </div>
+        <p class="mb-0 text-center"> &copy; 2026 MyPlaylist. Created by IT-2513 Team. </p>
+    </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

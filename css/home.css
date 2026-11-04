@@ -1,0 +1,47 @@
+#home {
+    position: relative;
+    padding: 28px 0;
+    border-bottom: 1px solid #dde3dd;
+}
+
+#home h1 {
+    margin-bottom: 12px;
+}
+
+.playlist-count {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    padding: 6px 12px;
+    background: #e8f2e8;
+    color: var(--main-color);
+    border-radius: 5px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+@media (max-width: 575px) {
+    #home {
+        padding-top: 60px;
+    }
+
+    .playlist-count {
+        top: 12px;
+        left: 0;
+        right: auto;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+}

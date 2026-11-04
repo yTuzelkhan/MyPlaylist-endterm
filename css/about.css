@@ -1,0 +1,37 @@
+.small-title {
+    color: var(--main-color);
+    font-size: 12px;
+}
+
+.track-list {
+    padding-left: 22px;
+    color: var(--muted-color);
+}
+
+.track-list li {
+    margin: 8px 0;
+}
+
+form {
+    max-width: 700px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9aa79a;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}

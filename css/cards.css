@@ -1,0 +1,55 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.music-card {
+    background: white;
+    border: 1px solid #dde3dd;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 25%;
+    background: #e4e9e4;
+}
+
+.card-content {
+    padding: 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-content h2 {
+    margin-bottom: 6px;
+}
+
+.card-content .music-btn {
+    margin-top: auto;
+}
+
+@media (max-width: 991px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-card > img {
+        height: 300px;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> About | MyPlaylist </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/about.css" rel="stylesheet">
+    <link href="css/endterm.css" rel="stylesheet">
+</head>
+    <body>
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo"> My<span>Playlist.</span> </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="index.html"> Home </a>
+                        </li>
+                        <li>
+                            <a href="songs.html"> Songs </a>
+                        </li>
+                        <li>
+                            <a href="albums.html"> Albums </a>
+                        </li>
+                        <li>
+                            <a href="artists.html"> Artists </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="active"> About </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="container my-5">
+            <section class="page-heading">
+                <p class="small-title"> ABOUT MYPLAYLIST </p>
+                <h1> A place for my favorite music </h1>
+                <p> Songs, albums, and artists I want to share. </p>
+            </section>
+            <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                    <section class="panel h-100">
+                        <h2> About the website </h2>
+                        <p> MyPlaylist brings our music choices together in one place. It includes Tame Impala, Ayau, Kairat Nurtas, The Weeknd, Dua Lipa, and Billie Eilish. </p>
+                        <p> You can explore songs, discover albums, and choose your favorite music. </p>
+                        <h3 class="mt-4"> What you can explore </h3>
+                        <ul class="track-list">
+                            <li>
+                                A collection of artists on the home page
+                            </li>
+                            <li>
+                                A table of songs with listening links
+                            </li>
+                            <li>
+                                Six albums from different artists
+                            </li>
+                            <li>
+                                A page dedicated to the artists
+                            </li>
+                        </ul>
+                        <a href="songs.html" class="btn music-btn"> Open the playlist </a>
+                    </section>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <aside class="panel h-100">
+                        <p class="small-title"> CREATED BY </p>
+                        <p class="mb-1"><strong>Group:</strong> IT-2513</p>
+                        <p class="mb-3"><strong>Project:</strong> Music Playlist Website</p>
+                        
+                        
+                        <div class="creator-item mb-3 pb-2 border-bottom">
+                            <h5 class="mb-1">Yermek Tuzelkhan</h5>
+                            <p class="mb-1 small text-muted">
+                                <a href="mailto:252080@astanait.edu.kz">252080@astanait.edu.kz</a>
+                            </p>
+                            <a href="https://github.com/yTuzelkhan" target="_blank" rel="noopener noreferrer" class="btn btn-sm second-btn">GitHub</a>
+                        </div>
+
+                        
+                        <div class="creator-item mb-3 pb-2 border-bottom">
+                            <h5 class="mb-1">Yerassyl Nauryzgali</h5>
+                            <p class="mb-1 small text-muted">
+                                <a href="mailto:254241@astanait.edu.kz">254241@astanait.edu.kz</a>
+                            </p>
+                            <a href="https://github.com/Yerassyl077" target="_blank" rel="noopener noreferrer" class="btn btn-sm second-btn">GitHub</a>
+                        </div>
+
+                        
+                        <div class="creator-item">
+                            <h5 class="mb-1">Kaussar Meirambekkyzy</h5>
+                            <p class="mb-1 small text-muted">
+                                <a href="mailto:253884@astanait.edu.kz">253884@astanait.edu.kz</a>
+                            </p>
+                            <a href="https://github.com/meirambekkausar" target="_blank" rel="noopener noreferrer" class="btn btn-sm second-btn">GitHub</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <section class="panel section mt-4" id="music-search">
+                <p class="small-title"> KEEP EXPLORING </p>
+                <h2> Find your next song </h2>
+                <p>Enter a song, album, or artist. Search opens Google results.</p>
+                <form action="https://www.google.com/search" method="get">
+                    <label for="search_query"> Song, album, or artist </label>
+                    <input type="search" id="search_query" name="q" placeholder="For example: Ayau sybyrlaiyn" required>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn music-btn"> Search </button>
+                        <button type="reset" class="btn second-btn"> Clear </button>
+                    </div>
+                </form>
+            </section>
+        <section class="panel section mt-4" id="registration"><p class="small-title">JOIN THE MUSIC</p><h2>Register your interest</h2><p>This is a client-side registration demo. No account is created and no personal information is sent or saved.</p>
+<form id="registration-form" novalidate><div class="mb-3"><label class="form-label" for="reg-name">Your name</label><input class="form-control" id="reg-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="name-feedback"><div id="name-feedback" class="field-feedback" aria-live="polite"></div></div><div class="mb-3"><label class="form-label" for="reg-email">Email</label><input class="form-control" id="reg-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-feedback"><div id="email-feedback" class="field-feedback" aria-live="polite"></div></div><div class="mb-3"><label class="form-label" for="reg-password">Password</label><input class="form-control" id="reg-password" name="password" type="password" autocomplete="new-password" required maxlength="128" aria-describedby="password-help password-strength password-feedback"><div id="password-feedback" class="field-feedback" aria-live="polite"></div><p id="password-help" class="small mt-2">Use at least 8 characters. For a strong password, use 12 or more with uppercase, lowercase, a number, and a symbol.</p><meter id="password-meter" min="0" max="3" value="0" aria-label="Password strength"></meter><p id="password-strength" aria-live="polite">Password strength: not entered</p></div><div class="mb-3"><label class="form-label" for="reg-confirm">Confirm password</label><input class="form-control" id="reg-confirm" name="confirm" type="password" autocomplete="new-password" required maxlength="128" aria-describedby="confirm-feedback"><div id="confirm-feedback" class="field-feedback" aria-live="polite"></div></div><button class="btn music-btn" type="submit">Validate registration</button> <button class="btn second-btn" type="reset">Reset</button><p id="registration-status" class="mt-3 mb-0" role="status"></p></form></section>
+</main>
+        <footer class="footer">
+            <div class="container">
+                <p> Contact: <a href="mailto:252080@astanait.edu.kz">252080@astanait.edu.kz</a> | <a href="mailto:254241@astanait.edu.kz">254241@astanait.edu.kz</a> | <a href="mailto:253884@astanait.edu.kz">253884@astanait.edu.kz</a> </p>
+                <div class="social-links">
+                    <a href="https://github.com/yTuzelkhan" target="_blank" rel="noopener noreferrer"> GitHub </a>
+                </div>
+                <p class="mb-0 text-center"> &copy; 2026 MyPlaylist. Created by IT-2513 Team. </p>
+            </div>
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
