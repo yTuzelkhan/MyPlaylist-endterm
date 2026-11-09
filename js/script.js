@@ -99,7 +99,12 @@ let songs = [
 $(document).ready(function () {
   let selectedCategory = "All";
   let editIndex = -1;
+const songDialog = document.getElementById("song-dialog");
 
+$("#open-song-dialog").on("click", function () {
+  resetSongForm();
+  songDialog.showModal();
+});
   function showSongs() {
     let search = $("#song-search").val().trim().toLowerCase();
     let count = 0;
@@ -146,7 +151,6 @@ $(document).ready(function () {
     $("#song-form")[0].reset();
     $("#editor-heading").text("Add a song");
     $("#save-song").text("Add song");
-    $("#cancel-edit").prop("hidden", true);
     $("#song-error").text("");
   }
 
@@ -184,6 +188,7 @@ $(document).ready(function () {
       $("#playlist-status").text("Song updated.");
     }
     resetSongForm();
+    songDialog.close();
     showSongs();
   });
 
@@ -196,7 +201,7 @@ $(document).ready(function () {
     $("#song-url").val(song.url);
     $("#editor-heading").text("Edit song");
     $("#save-song").text("Save changes");
-    $("#cancel-edit").prop("hidden", false);
+    songDialog.showModal();
     $("#song-title").trigger("focus");
   });
 
@@ -211,7 +216,10 @@ $(document).ready(function () {
     }
   });
 
-  $("#cancel-edit").on("click", resetSongForm);
+  $("#cancel-edit").on("click", function () {
+  resetSongForm();
+  songDialog.close();
+});
   if ($("#song-rows").length) showSongs();
   function checkField(field) {
     let input = $("#reg-" + field);
