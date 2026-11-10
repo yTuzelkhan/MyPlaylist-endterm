@@ -25,3 +25,31 @@ caption { caption-side:top; }
 @media(max-width:991px) { #album-gallery .col { flex-basis:calc(50% - 12px); width:calc(50% - 12px); } }
 @media(max-width:575px) { #album-gallery .col { flex-basis:100%; width:100%; } .table-actions { flex-direction:column; } dialog { padding:16px; } }
 @media(prefers-reduced-motion:reduce) { .gallery-trigger img { transition:none; } }
+#lightbox-image {
+  cursor: zoom-in;
+  transition: transform 0.25s ease-in-out;
+}
+
+#lightbox-image.zoomed {
+  cursor: zoom-out;
+  transform: scale(1.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-trigger {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+}
+
+.gallery-trigger img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-trigger:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
