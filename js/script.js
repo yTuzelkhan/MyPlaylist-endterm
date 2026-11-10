@@ -285,9 +285,23 @@ $("#open-song-dialog").on("click", function () {
     }
     if (valid) {
       this.reset();
-      $("#registration-status").text("Registration details are valid. This demo does not create an account.");
+      $("#registration-status").html(`
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+          <strong>Success!</strong> Registration details are valid.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      `);
+      setTimeout(function () {
+        $("#registration-status .alert").fadeOut(400, function () {
+          $(this).remove();
+        });
+      }, 4000);
     } else {
-      $("#registration-status").text("Please correct the highlighted fields.");
+      $("#registration-status").html(`
+        <div class="alert alert-danger mt-3" role="alert">
+          Please correct the highlighted fields before submitting.
+        </div>
+      `);
       $(this).find(".is-invalid").first().trigger("focus");
     }
   });
