@@ -359,6 +359,24 @@ $("#open-song-dialog").on("click", function () {
   $("#lightbox").on("keydown", function (event) {
     if (event.key === "ArrowLeft") changeImage(-1);
     if (event.key === "ArrowRight") changeImage(1);
+    if (event.key === "Escape") closeGallery();
+  });
+
+  $("#lightbox-image").on("click", function () {
+    $(this).toggleClass("zoomed");
+    if ($(this).hasClass("zoomed")) {
+      $(this).stop(true, true).animate({ transform: "scale(1.25)" }, 200);
+    } else {
+      $(this).stop(true, true).animate({ transform: "scale(1)" }, 200);
+    }
+  });
+
+  $("#lightbox-image").on("dblclick", function () {
+    if (!document.fullscreenElement) {
+      lightbox.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
   });
   $("#lightbox-image").on("error", function () {
     if (!this.src.endsWith("music-placeholder.svg")) this.src = "images/music-placeholder.svg";
