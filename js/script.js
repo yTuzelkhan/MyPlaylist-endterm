@@ -396,3 +396,73 @@ $("#open-song-dialog").on("click", function () {
     if (!this.src.endsWith("music-placeholder.svg")) this.src = "images/music-placeholder.svg";
   });
 });
+(() => {
+  const themeKey = "myplaylist-theme";
+  const userKey = "myplaylist-user";
+
+  const controls = document.createElement("div");
+  controls.className = "account-controls";
+  controls.innerHTML = `
+    <button type="button" class="btn second-btn" id="theme-toggle">Dark mode</button>
+    <a class="btn second-btn" id="sign-in-link" href="about.html#sign-in">Sign in</a>
+    <span id="signed-in-user" hidden></span>
+    <button type="button" class="btn second-btn" id="sign-out" hidden>Sign out</button>
+  `;
+  document.querySelector(".header-container").append(controls);
+
+  const themeButton = document.getElementById("theme-toggle");
+  const signInLink = document.getElementById("sign-in-link");
+  const signedInUser = document.getElementById("signed-in-user");
+  const signOutButton = document.getElementById("sign-out");
+  const form = document.getElementById("sign-in-form");
+  const status = document.getElementById("sign-in-status");
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.bsTheme = theme;
+    themeButton.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+  }
+
+  function showLoginState() {
+    const name = localStorage.getItem(userKey);
+    signInLink.hidden = Boolean(name);
+    signedInUser.hidden = !name;
+    signOutButton.hidden = !name;
+    signedInUser.textContent = name ? "Hi, " + name : "";
+    if (form) form.hidden = Boolean(name);
+    if (status) status.textContent = name ? "Signed in as " + name + "." : "";
+  }
+
+  applyTheme(localStorage.getItem(themeKey) === "dark" ? "dark" : "light");
+  showLoginState();
+
+  themeButton.addEventListener("click", () => {
+    const theme = document.documentElement.dataset.bsTheme === "dark" ? "light" : "dark";
+    localStorage.setItem(themeKey, theme);
+    applyTheme(theme);
+  });
+
+  signOutButton.addEventListener("click", () => {
+    localStorage.removeItem(userKey);
+    showLoginState();
+    signInLink.focus();
+  });
+
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("sign-in-name").value.trim();
+      const password = document.getElementById("sign-in-password").value;
+
+      if (name.length < 2 || password.trim().length < 8) {
+        status.textContent = "Enter a display name with at least 2 characters and a demo password with at least 8 characters.";
+        return;
+      }
+
+      localStorage.setItem(userKey, name);
+      form.reset();
+      showLoginState();
+      signOutButton.focus();
+    });
+  }
+})();
