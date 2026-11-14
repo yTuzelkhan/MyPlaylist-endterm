@@ -53,3 +53,73 @@ caption { caption-side:top; }
   transform: scale(1.05);
   filter: brightness(1.08);
 }
+.account-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.account-controls [hidden] {
+    display: none !important;
+}
+
+html[data-bs-theme="dark"] {
+    color-scheme: dark;
+    --main-color: #8fdda9;
+    --text-color: #ecf3ed;
+    --muted-color: #b5c7b9;
+    --dark-surface: #1c2921;
+    --dark-border: #425648;
+}
+
+html[data-bs-theme="dark"] body {
+    background: #111a15;
+}
+
+[data-bs-theme="dark"] :is(.header, .footer, .panel, .music-card, dialog) {
+    background-color: var(--dark-surface);
+    color: var(--text-color);
+    border-color: var(--dark-border);
+}
+
+[data-bs-theme="dark"] :is(#home, .song-table td, .song-table th) {
+    border-color: var(--dark-border);
+}
+
+[data-bs-theme="dark"] :is(.playlist-count, .song-table th, .song-table tr:nth-child(even), #lightbox-image) {
+    background-color: #26392e;
+}
+
+[data-bs-theme="dark"] :is(.song-table tr:hover, .second-btn:hover) {
+    background-color: #30483a;
+    color: var(--text-color);
+}
+
+[data-bs-theme="dark"] a:hover {
+    color: #b4efc8;
+}
+
+[data-bs-theme="dark"] .music-btn {
+    background: #8fdda9;
+    border-color: #8fdda9;
+    color: #102217;
+}
+
+[data-bs-theme="dark"] .music-btn:hover {
+    background: #b4efc8;
+    color: #102217;
+}
+
+[data-bs-theme="dark"] .field-feedback {
+    color: #a6e8bc;
+}
+
+[data-bs-theme="dark"] :is(.delete-btn, .error-text, .field-feedback.error-text) {
+    color: #ffb3b3;
+}
+
+[data-bs-theme="dark"] .delete-btn:hover {
+    color: white;
+}
