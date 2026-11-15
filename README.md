@@ -1,7 +1,7 @@
 # MyPlaylist
 
 **Course:** Web Technologies  
-**Project:** Endterm Project  
+**Project:** Final Project  
 **Topic:** Music playlist website for browsing songs, artists, and albums  
 **Group:** IT-2513
 
@@ -41,3 +41,14 @@ For the endterm, we added JavaScript and jQuery features to the existing website
 ## Published Website
 
 [Open MyPlaylist](https://ytuzelkhan.github.io/MyPlaylist-endterm/)
+
+## Final project additions
+
+- The existing light/dark toggle and localStorage sign-in remain in js/script.js.
+- About now has six music FAQs with jQuery slideToggle, smooth animation, and +/- indicators.
+- Songs now has real iTunes Search API results loaded with fetch and JSON. Search for an artist or song, filter results by genre, and open catalog links.
+- API loading, empty results, HTTP/network errors, timeout, and retry states are handled. Recent repeated queries use an in-memory cache.
+- Gallery zoom uses its existing CSS class; Escape closes the gallery once; the registration success alert close button works without Bootstrap JavaScript.
+- New files: css/final-additions.css, js/api.js, and js/faq.js.
+
+The final additions are a local update. They have not been committed, pushed, or deployed. Confirm the current repository and Pages links after publication. The individual contributions above are retained from the endterm; add each member's actual final work before submission.

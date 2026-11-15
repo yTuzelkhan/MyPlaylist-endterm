@@ -9,6 +9,7 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/songs.css" rel="stylesheet">
     <link href="css/endterm.css" rel="stylesheet">
+    <link href="css/final-additions.css" rel="stylesheet">
 </head>
     <body>
         <header class="header">
@@ -87,7 +88,34 @@
                     <table class="song-table"><caption>Your playlist — add, edit, or delete songs</caption><thead><tr><th scope="col">#</th><th scope="col">Song</th><th scope="col">Artist</th><th scope="col">Genre</th><th scope="col">Listen</th><th scope="col">Actions</th></tr></thead><tbody id="song-rows"></tbody></table><noscript>Enable JavaScript to manage your playlist.</noscript>
                 </div>
             </section>
-        </main>
+        <section class="panel section" id="discover" aria-labelledby="discover-title">
+  <p class="small-title">BEYOND OUR PLAYLIST</p>
+  <h2 id="discover-title">Discover music</h2>
+  <p>Search songs and artists in the iTunes catalog. Find a new favorite, then open it in Apple Music.</p>
+  <form id="api-search-form" class="api-search-form">
+    <div class="api-query-field">
+      <label for="api-query" class="form-label">Song or artist</label>
+      <input id="api-query" class="form-control" type="search" name="query" required minlength="2" maxlength="100" placeholder="Try Tame Impala or Blinding Lights" aria-describedby="api-help" autocomplete="off">
+    </div>
+    <button type="submit" id="api-submit" class="btn music-btn">Search catalog</button>
+  </form>
+  <p id="api-help" class="small mt-2">Live results from the US iTunes catalog. Internet connection required.</p>
+  <div class="filter-buttons api-suggestions" aria-label="Try an artist">
+    <button type="button" class="btn second-btn" data-music-query="Tame Impala">Tame Impala</button>
+    <button type="button" class="btn second-btn" data-music-query="The Weeknd">The Weeknd</button>
+    <button type="button" class="btn second-btn" data-music-query="Dua Lipa">Dua Lipa</button>
+    <button type="button" class="btn second-btn" data-music-query="Billie Eilish">Billie Eilish</button>
+  </div>
+  <div class="api-filter" hidden>
+    <label for="api-genre" class="form-label">Filter these results by genre</label>
+    <select id="api-genre" class="form-select"><option value="">All genres</option></select>
+  </div>
+  <p id="api-status" class="api-status" role="status" aria-live="polite">Search the live catalog to see results here.</p>
+  <button id="api-retry" class="btn second-btn mb-3" type="button" hidden>Try again</button>
+  <div id="api-results" class="api-results" aria-busy="false"></div>
+  <p class="small mb-0 mt-3">Catalog data: <a href="https://performance-partners.apple.com/search-api" target="_blank" rel="noopener noreferrer">iTunes Search API</a>. No full songs are hosted on MyPlaylist.</p>
+</section>
+</main>
         <footer class="footer">
     <div class="container">
         <p> Contact: <a href="mailto:252080@astanait.edu.kz">252080@astanait.edu.kz</a> | <a href="mailto:254241@astanait.edu.kz">254241@astanait.edu.kz</a> | <a href="mailto:253884@astanait.edu.kz">253884@astanait.edu.kz</a> </p>
@@ -99,5 +127,6 @@
 </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/api.js"></script>
 </body>
 </html>

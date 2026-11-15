@@ -288,7 +288,7 @@ $("#open-song-dialog").on("click", function () {
       $("#registration-status").html(`
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
           <strong>Success!</strong> Registration details are valid.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-close-alert aria-label="Close"></button>
         </div>
       `);
       setTimeout(function () {
@@ -312,12 +312,17 @@ $("#open-song-dialog").on("click", function () {
     $("#password-meter").val(0);
     $("#password-strength").text("Password strength: not entered");
   });
+  $("#registration-status").on("click", "[data-close-alert]", function () {
+    $(this).closest(".alert").remove();
+  });
+
   let cards = $("#album-gallery .music-card");
   let currentImage = 0;
   let opener;
   let lightbox = $("#lightbox")[0];
 
   function showImage() {
+    $("#lightbox-image").removeClass("zoomed");
     let card = cards.eq(currentImage);
     $("#lightbox-image").attr("src", card.find("img").attr("src"));
     $("#lightbox-image").attr("alt", card.find("h2").text());
@@ -373,16 +378,11 @@ $("#open-song-dialog").on("click", function () {
   $("#lightbox").on("keydown", function (event) {
     if (event.key === "ArrowLeft") changeImage(-1);
     if (event.key === "ArrowRight") changeImage(1);
-    if (event.key === "Escape") closeGallery();
+
   });
 
   $("#lightbox-image").on("click", function () {
     $(this).toggleClass("zoomed");
-    if ($(this).hasClass("zoomed")) {
-      $(this).stop(true, true).animate({ transform: "scale(1.25)" }, 200);
-    } else {
-      $(this).stop(true, true).animate({ transform: "scale(1)" }, 200);
-    }
   });
 
   $("#lightbox-image").on("dblclick", function () {
