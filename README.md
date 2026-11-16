@@ -37,9 +37,9 @@ For the Final Project, we extended the website with theme switching, persistent 
 
 ## Individual Contributions
 
-- **Yermek Tuzelkhan** implemented the Light/Dark theme toggle and client-side Sign-In / Sign-Out functionality using `localStorage`, and maintained the dynamic playlist CRUD table.
-- **Yerassyl Nauryzgali** integrated the public iTunes Search API (`fetch()`, JSON rendering, genre filtering, caching, and error handling) on the Songs page and developed the live playlist search and filters.
-- **Kaussar Meyrambekkyzy** developed the jQuery FAQ accordion (`.slideToggle()` and `+`/`−` indicators) on the About page, registration form validation with Bootstrap alerts, and finalized the project documentation and AI acknowledgment.
+- **Yerassyl Nauryzgali** implemented the light and dark theme toggle with `localStorage` persistence, built the client-side demo sign-in form, and added the initial AI usage acknowledgment.
+- **Yermek Tuzelkhan** integrated the public iTunes Search API (`api.js`), set up the discovery section on the Songs page, and coordinated the core project structure and file integration.
+- **Kaussar Meyrambekkyzy** expanded and refined the interactive jQuery FAQ section (`faq.js`, `about.html`), updated script form validation , styled final project additions (`final-additions.css`), and updated project documentation (`README.md`).
 
 ## AI Usage Acknowledgment
 
