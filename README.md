@@ -15,40 +15,36 @@
 
 MyPlaylist is a responsive music website that brings a collection of songs, artists, and albums together in one place. It has five pages: Home, Songs, Albums, Artists, and About. Visitors can browse the collection, find tracks by song title or artist, and follow listening links from the playlist.
 
-For the endterm, we added JavaScript and jQuery features to the existing website. Visitors can search and filter the playlist without reloading the page, manage songs in a dynamic table, open album images in a lightbox, and try a registration form with live validation.
+For the Final Project, we extended the website with theme switching, persistent client-side sign-in, an interactive jQuery FAQ section, and live music catalog search powered by the iTunes Search API.
 
 ## Implemented Features
 
-- **Live search and genre filters.** The Songs page updates results as visitors type. Search works with uppercase and lowercase letters and can be combined with the selected genre.
-- **Playlist management.** Visitors can add a song, view the playlist, edit an existing entry, and delete a song after confirming the action. The table updates immediately. Playlist changes last until the page is reloaded.
-- **Registration form validation.** The About page checks required fields and validates the email format using a regular expression. It also shows password strength as weak, medium, or strong and checks that both passwords match. The form displays feedback as visitors type and blocks invalid submissions.
-- **Interactive album gallery.** Clicking an image on the Albums page opens an enlarged view. Previous and Next buttons let visitors move between images, and jQuery fade effects animate the transitions.
-- **Responsive layout.** Bootstrap and custom CSS adapt the navigation, cards, forms, and table for different screen sizes.
+- **Light / Dark Theme Toggle.** Available in the header on every page (`js/script.js`). Saves the chosen theme in `localStorage` so it stays active after reloading or switching pages.
+- **Sign-In / Sign-Out Demo.** Visitors can sign in on the About page using a display name and demo password (`js/script.js`). The session state is stored in `localStorage`, showing a personalized greeting and a Sign Out button in the header.
+- **Interactive FAQ Section.** The About page includes six music-related questions (`js/faq.js`) that expand and collapse smoothly using jQuery `.slideToggle()` with `+` and `−` indicators.
+- **Live Catalog Search (iTunes API).** The Songs page fetches real track data from the public iTunes Search API (`js/api.js`) using `fetch()` and JSON. Visitors can search by artist or song, filter results by genre, use quick artist buttons, and handle loading, empty, or error states with retry support.
+- **Playlist Management & Live Filters.** Visitors can search and filter the local playlist in real time, add new songs, edit existing entries, and delete tracks with confirmation (`js/script.js`).
+- **Registration Form & Album Lightbox.** The About page validates required inputs, email RegEx, password strength, and confirmation with Bootstrap alerts. The Albums page features an interactive Lightbox gallery with zoom, keyboard navigation, and jQuery fade transitions.
+- **Responsive Layout.** Bootstrap 5 and custom CSS (`style.css`, `endterm.css`, `final-additions.css`) adapt the site for desktop, tablet, and mobile screens.
 
 ## Technologies Used
 
-- HTML5 for page structure and forms
-- CSS3 and Bootstrap 5 for styling and responsive layouts
-- JavaScript and jQuery for search, filters, table updates, form validation, and gallery interactions
+- HTML5 for semantic page structure and forms
+- CSS3 and Bootstrap 5 for styling, dark mode variables, and responsive layouts
+- JavaScript (ES6+, `fetch()`, `localStorage`) and jQuery for dynamic features and animations
+- iTunes Search API (public REST API returning JSON)
 - GitHub Pages for publishing the website
 
 ## Individual Contributions
 
-- **Yermek Tuzelkhan** developed the dynamic playlist table and the add, edit, and delete actions. He integrated the endterm scripts into the website, tested the playlist workflow, and updated the project documentation.
-- **Yerassyl Nauryzgali** developed the live song and artist search and the genre filters. He connected both controls to the playlist table and worked on the responsive layout of the Songs page.
-- **Kaussar Meyrambekkyzy** developed the registration form validation, including email checks, password strength, and password confirmation. She also worked on the album lightbox, image navigation, and fade transitions.
+- **Yerassyl Nauryzgali** implemented the light and dark theme toggle with `localStorage` persistence, built the client-side demo sign-in form, and added the initial AI usage acknowledgment.
+- **Yermek Tuzelkhan** integrated the public iTunes Search API (`api.js`), set up the discovery section on the Songs page, and coordinated the core project structure and file integration.
+- **Kaussar Meyrambekkyzy** expanded and refined the interactive jQuery FAQ section (`faq.js`, `about.html`), updated script form validation , styled final project additions (`final-additions.css`), and updated project documentation (`README.md`).
+
+## AI Usage Acknowledgment
+
+AI tools (ChatGPT and Gemini) were used as supporting references for minor JavaScript debugging, CSS adjustments, and proofreading documentation. All core features and design decisions were implemented and tested by our team.
 
 ## Published Website
 
 [Open MyPlaylist](https://ytuzelkhan.github.io/MyPlaylist-endterm/)
-
-## Final project additions
-
-- The existing light/dark toggle and localStorage sign-in remain in js/script.js.
-- About now has six music FAQs with jQuery slideToggle, smooth animation, and +/- indicators.
-- Songs now has real iTunes Search API results loaded with fetch and JSON. Search for an artist or song, filter results by genre, and open catalog links.
-- API loading, empty results, HTTP/network errors, timeout, and retry states are handled. Recent repeated queries use an in-memory cache.
-- Gallery zoom uses its existing CSS class; Escape closes the gallery once; the registration success alert close button works without Bootstrap JavaScript.
-- New files: css/final-additions.css, js/api.js, and js/faq.js.
-
-The final additions are a local update. They have not been committed, pushed, or deployed. Confirm the current repository and Pages links after publication. The individual contributions above are retained from the endterm; add each member's actual final work before submission.

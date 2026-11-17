@@ -221,6 +221,9 @@ $("#open-song-dialog").on("click", function () {
   songDialog.close();
 });
   if ($("#song-rows").length) showSongs();
+  if ($(".playlist-count").length) {
+    $(".playlist-count").text(songs.length + " songs");
+  }
   function checkField(field) {
     let input = $("#reg-" + field);
     let value = input.val();
