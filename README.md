@@ -47,4 +47,4 @@ AI tools (ChatGPT and Gemini) were used as supporting references for minor JavaS
 
 ## Published Website
 
-[Open MyPlaylist](https://ytuzelkhan.github.io/MyPlaylist-endterm/)
+[Open MyPlaylist](https://ytuzelkhan.github.io/MyPlaylist-final/)
